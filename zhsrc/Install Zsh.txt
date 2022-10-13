@@ -1,0 +1,29 @@
+#####Instalar shell zsh
+
+
+sudo add-apt-repository universe
+sudo apt install zsh zsh-syntax-highlighting zsh-autosuggestions -y
+
+zsh (opcion 2)
+
+sudo usermod --shell /bin/zsh antonio 
+sudo usermod --shell /bin/zsh root
+
+vim .zshrc
+
+1,$d
+
+#####root
+
+ln -s /home/antonio/.zshrc .zshrc
+
+
+
+
+
+
+
+
+
+
+https://askubuntu.com/questions/1297969/what-tool-do-i-need-to-install-to-make-my-terminal-show-the-autocompletion-of-th

@@ -1,0 +1,75 @@
+#####Zabbix en Debian 11
+
+Zabbix 6.0 LTS version (supported until February, 2027
+
+wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/
+zabbix-release_6.0-1+debian$(cut -d"." -f1 /etc/debian_version)_all.deb
+
+dpkg -i zabbix-release_6.0-1+debian$(cut -d"." -f1 /etc/debian_version)_all.deb
+
+apt update
+
+apt -y install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf 
+zabbix-sql-scripts zabbix-agent
+
+
+#####Configure database
+
+#Install e iniciar MariaDB
+
+apt -y install mariadb-server
+
+systemctl start mariadb && systemctl enable mariadb
+
+
+#####Reset root password for database
+
+mysql_secure_installation
+
+Password MariaDB: Accmpf00*  Password Zabbix: pmccA11-
+
+
+#####Create database
+
+mysql -uroot -p'Accmpf00*' -e "create database zabbix character set utf8mb4 collate utf8mb4_bin;"
+mysql -uroot -p'Accmpf00*' -e "grant all privileges on zabbix.* to zabbix@localhost identified by 'pmccA11-';"
+
+
+#####Import initial schema and data
+
+zcat /usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p'pmccA11-' zabbix
+
+
+#####Enter database password in Zabbix configuration file
+
+vim /etc/zabbix/zabbix_server.conf
+
+#DBPassword=pmccA11-
+
+
+#####Start Zabbix server and agent processes
+
+
+systemctl restart zabbix-server zabbix-agent && systemctl enable zabbix-server zabbix-agent
+
+
+#####Configure PHP for Zabbix frontend
+
+vim /etc/zabbix/apache.conf 
+
+php_value date.timezone America/Panama
+
+
+#####Restart apache service
+systemctl restart apache2 && systemctl enable apache2
+
+
+#####Ingresar 
+
+http://192.168.7.75/zabbix 192.168.7.75
+
+
+
+https://bestmonitoringtools.com/how-to-install-zabbix-server-on-debian/#Step_1_Install_Zabbix_server_frontend_and_agent
+https://tutorialesit.com/cambiar-idioma-interfaz-web-zabbix/
+https://sospedia.net/zabbix-en-espanol-cambiar-idioma/

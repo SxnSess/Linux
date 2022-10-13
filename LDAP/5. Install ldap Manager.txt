@@ -1,0 +1,13 @@
+#####Descargar LDAP Account Manager
+
+wget https://sourceforge.net/projects/lam/files/LAM/8.0.1/ldap-account-manager_8.0.1-1_all.deb
+
+
+#####Instalar LDAP Account Manager
+
+sudo apt install -f ./ldap-account-manager_8.0.1-1_all.deb -y
+
+x.x.x.x/lam
+
+passwords_General: 163528
+passwords_Server: root

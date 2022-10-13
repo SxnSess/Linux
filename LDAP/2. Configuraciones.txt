@@ -1,0 +1,21 @@
+#####Agregar base-dn para Users and Groups
+
+dn: ou=people,dc=roseliz,dc=com
+objectClass: organizationalUnit
+ou: people
+
+dn: ou=groups,dc=roseliz,dc=com
+objectClass: organizationalUnit
+ou: groups
+
+ 
+#####agregar las configuraciones
+
+sudo ldapadd -x -D cn=admin,dc=roseliz,dc=com -W -f basedn.ldif
+
+
+#####Generar contrasenas para usuarios
+
+sudo slappasswd >> name.ldif
+
+{SSHA}957Zm6jJAcXaGXZx+SgMMBOozbJKjrzV

@@ -1,0 +1,6 @@
+dn: cn=admin,dc=ieslapaloma,dc=com
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+userPassword:: e2NyeXB0fXdSVDNLMEpKSlQydmM=

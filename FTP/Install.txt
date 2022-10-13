@@ -1,0 +1,19 @@
+#####Install Vsftpd
+
+sudo apt update && sudo apt install vsftpd -y
+
+
+
+####Iniciar el servidor
+
+sudo systemctl start vsftpd
+
+
+####Iniciar el servidor con el SO
+
+sudo systemctl enable vsftpd
+
+####Verificamos el servidor
+
+sudo systemctl status vsftpd
+

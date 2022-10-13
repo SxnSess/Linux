@@ -1,0 +1,6 @@
+#####Error version 4.4.7
+
+sudo vim /usr/local/nagios/etc/nagios.cfg
+
+
+$ check_for_updates=0

@@ -1,0 +1,33 @@
+********Instalar sudo********* 
+
+apt install sudo
+
+
+********Crear usuario********
+
+useradd -m -s /bin/bash name
+
+
+********Agregar usuario a sudo********
+
+usermod -aG sudo usuario 
+sbin/usermod -aG usuario
+
+
+******Puede cambiar la contrasena al iniciar************
+
+chage -d0 name 
+
+
+*******Cuando no tenga permisos privilegiados******
+
+useradd -d /home/name -s /bin/bash name
+usermod -s /bin/bash/ name
+
+
+CENTOS
+
+useradd name.usuario
+usermod -aG wheel name.usuario
+passwd name.usuario
+chage -d0 name 

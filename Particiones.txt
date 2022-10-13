@@ -1,0 +1,26 @@
+#####Espacio en Disco
+
+Disco 30GB
+
+/root  7
+/boot  1
+/usr   3
+/tmp   3
+/var   3
+swap   2
+/home  
+
+
+Disco 60GB
+
+/root 15gb
+/boot 1gb
+/usr 5 gb
+/tmp 5 gb
+/Var 5 gb
+Swap 4 gb
+/home 20gb
+
+
+
+https://www.youtube.com/watch?v=JOf-frMDEw0

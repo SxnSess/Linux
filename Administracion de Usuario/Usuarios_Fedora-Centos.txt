@@ -1,0 +1,34 @@
+#####Creacion de usuarios
+
+useradd username
+passwd username    >>>>> Para configurar la contrasena del usuario
+
+
+#####Darle privilegios sudo 
+#Puede verificar si un usuario tiene acceso sudo
+
+vi /etc/pam.d/su 
+
+sudo usermod -aG wheel username
+
+#Agregue usuarios a sudoers editando el archivo de configuración
+
+sudo visudo
+
+root        ALL=(ALL)       ALL
+newusername ALL=(ALL)       ALL
+
+
+#####Para ingresar a un usuario
+
+su - username
+
+
+#####Eliminar usuarios 
+
+userdel username
+
+
+#####Eliminar usuarios y directorio home
+
+userdel -r username

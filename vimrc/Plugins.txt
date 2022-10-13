@@ -1,0 +1,54 @@
+#####Instacion de paquetes necesarios
+
+sudo apt -y update && sudo apt upgrade
+sudo apt -y install git && sudo apt install curl
+
+
+#####clonamos el repositorio y lo ingresamos a la carpeta .vim
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+#####.vimrc
+
+syntax on
+set nu
+colorscheme murphy
+let g:colors_name = "murphy"
+set laststatus=2
+
+call plug#begin('~/.vim/plugged')
+
+"themes
+Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
+Plug 'joshdick/onedark.vim'
+Plug 'abra/vim-obsidian'
+
+" status bar
+Plug 'maximbaz/lightline-ale'
+Plug 'itchyny/lightline.vim'
+
+" autocomplete
+Plug 'sirver/ultisnips'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" syntax
+Plug 'sheerun/vim-polyglot'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'norcalli/nvim-colorizer.lua'
+
+    
+call plug#end()
+
+source ~/.vimrc
+PlugInstall
+
+
+"Mapeo de NerdTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+

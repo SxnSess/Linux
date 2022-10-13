@@ -1,0 +1,14 @@
+#####Verificar configuracion de Nagios Core
+
+sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+
+
+#####Inicie y active el servicio Nagios
+
+sudo systemctl start nagios
+sudo systemctl enable nagios
+
+
+#####Acceder a la interfaz web de Nagios
+
+http://you-ip/nagios

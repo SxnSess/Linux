@@ -1,0 +1,32 @@
+####Aplicar Alias a todos los usuarios
+
+vi /etc/profile.d/command_alias.sh 
+
+#add alias you'd like to set
+
+alias ll='ls $LS_OPTIONS -l'
+alias l='ls $LS_OPTIONS -lA'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i' 
+
+#reload
+
+source /etc/profile.d/command_alias.sh
+
+
+####Aplicar Alias a un usuario en especifico
+
+vi ~/.bashrc or vi ~/.zshrc
+
+# add to the end : add alias you'd like to set
+
+alias ll='ls $LS_OPTIONS -l'
+alias l='ls $LS_OPTIONS -lA'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+#reload 
+
+source ~/.bashrc 

@@ -1,0 +1,15 @@
+#####Agregar Grupos
+
+dn: cn=Estudiantes,ou=groups,dc=servidor1,dc=com
+objectClass: posixGroup
+cn: Estudiantes
+gidNumber: 3000
+memberUid: Estudiantes
+
+
+#####Agregar grupo 
+sudo ldapadd -x -D cn=admin,dc=server1,dc=com -W -f ldapgroups.ldif
+
+
+#####Eliminar grupo
+ldapdelete -x -W -D 'cn=admin,dc=srv,dc=world' "uid=bullseye,ou=people,dc=srv,dc=world"

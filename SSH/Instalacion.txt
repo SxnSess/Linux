@@ -1,0 +1,14 @@
+#####instalar ssh en distros basadas en debian:
+
+sudo apt install openssh-client openssh-server   (Cliente y servidor)
+sudo apt install openssh-client                  (Cliente)
+sudo apt install openssh-server                  (Servidor)
+
+
+#####Para instalar ssh en distros basadas en Centos/Redhat/Fedora:
+
+dnf -y install openssh-clients openssh-server    (Cliente y servidor) 
+dnf -y install openssh-clients                   (Cliente)
+dnf -y install openssh-server                    (Servidor)  
+
+

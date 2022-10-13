@@ -1,0 +1,10 @@
+#####Konsole Install
+
+
+#####Actualizar Repositorios 
+
+sudo apt update && sudo apt -y upgrade
+
+#####Install Konsole
+
+sudo apt -y install konsole

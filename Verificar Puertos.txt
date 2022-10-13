@@ -1,0 +1,14 @@
+*************nmap************
+
+sudo nmap -p 80 192.168.7.75
+
+
+*************lsof************
+	
+sudo lsof -i -P -n
+sudo lsof -i -P -n | grep LISTEN
+
+
+*************netstat************
+
+netstat -putona | grep port

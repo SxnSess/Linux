@@ -1,0 +1,24 @@
+#####Conectar Agentes Ubuntus 
+
+Zabbix 6.0 LTS version
+
+wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-3+ubuntu$(lsb_release -rs)_all.deb
+
+sudo dpkg -i zabbix-release_6.0-3+ubuntu$(lsb_release -rs)_all.deb
+
+sudo apt update
+
+sudo apt install zabbix-agent
+
+#####Crear certificado
+
+sudo sh -c "openssl rand -hex 32 > /etc/zabbix/zabbix_agentd.psk"
+
+#####Ver certificado generado
+
+cat /etc/zabbix/zabbix_agentd.psk
+
+
+#####Configurar agente
+
+sudo nano /etc/zabbix/zabbix_agentd.conf

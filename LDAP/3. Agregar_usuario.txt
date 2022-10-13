@@ -1,0 +1,25 @@
+####Crear usuarios
+
+dn: uid=Aperez,ou=people,dc=servidor1,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: Antonio
+sn: Perez
+userPassword: {SSHA}hiu+n4Grg4Imh0MAaEwI4vlnSSQsqEWY 
+loginShell: /bin/bash
+homeDirectory: /home/aperez
+uidNumber: 3000
+gidNumber: 3000
+
+
+#####Agregar Usuarios
+
+sudo ldapadd -x -D cn=admin,dc=servidor1,dc=com -W -f ldapusers.ldif 
+
+
+#####Eliminar usuario
+
+ldapdelete -x -W -D 'cn=admin,dc=roseliz,dc=com' "ou=group,dc=roseliz,dc=com"
+
+user: rdegracia IDqajpDHPeRq

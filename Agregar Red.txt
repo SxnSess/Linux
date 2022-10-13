@@ -1,0 +1,14 @@
+nano /etc/network/interfaces
+
+allow-hotplug ensX
+iface ensX inet static
+        address x.x.x.x/24
+        gateway x.x.x.x
+        # dns-* options are implemented by the 
+	resolvconf package, if installed
+        dns-nameservers x.x.x.x
+
+ifdown ensX
+ifup ensX
+
+ip a

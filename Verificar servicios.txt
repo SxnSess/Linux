@@ -1,0 +1,31 @@
+#####ver los servicios
+
+systemctl -t service 
+
+systemctl list-unit-files -t service 
+
+
+#####Detener un Servicio
+
+systemctl stop servicio
+
+
+#####Iniciar un Servicio
+
+systemctl start servicio
+
+
+#####Reiniciar un Servicio
+
+systemctl restart servicio
+
+
+#####Desacticar un Servicio para siempre 
+
+systemctl disable servicio
+
+
+#####Acticar un Servicio
+
+systemctl enable servicio
+

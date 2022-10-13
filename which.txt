@@ -1,0 +1,8 @@
+#####Encontrar ruta de Comandos
+
+sudo which comand
+   
+   
+   
+        v
+tree -L 1 /home

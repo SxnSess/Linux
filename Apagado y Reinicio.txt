@@ -1,0 +1,10 @@
+********Apagado de sistema************
+shutdown -h
+shutdown -h 0
+shutdown now
+
+
+********Reinicio de sistema************
+sudo reboot
+shutdown -r 0
+shutdown -r now

@@ -1,0 +1,20 @@
+#####Correr un contenedor
+
+docker run --name nginxAntonio -v ~/Documents/webs/html:/usr/share/nginx/html:ro -p80:80 -d 670dcc86b69d
+
+#contenedor ubuntu 
+
+-v /local/path/to/website:/var/www/html
+
+#####Ingresar a los contenedores
+
+docker exec -it nginxAntonio /bin/bash o shell
+
+
+#####Ver logs de los contenedores
+
+docker logs -f nginx-container
+
+read only
+
+<h1>Holaaaaa<h1>

@@ -1,0 +1,14 @@
+#####Vimrc Settings
+
+syntax on
+set nu
+colorscheme murphy
+set laststatus=2
+set fileformats=unix,dos
+set autoindent
+
+:highlight Normal ctermfg=grey ctermbg=DarkBlue
+
+1,$d
+
+#https://alvinalexander.com/linux/vi-vim-editor-color-scheme-syntax/

@@ -1,0 +1,22 @@
+#####Install Docker 
+
+sudo apt -y install docker.io docker-compose
+
+
+#####Verificar la version
+
+sudo docker version
+sudo docker -v
+
+
+#####Verificar el estado 
+
+sudo systemctl status docker
+
+
+#####Agregar docker a Sudo
+
+sudo usermod -aG docker $USER
+
+
+

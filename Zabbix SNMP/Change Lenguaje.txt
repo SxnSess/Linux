@@ -1,0 +1,39 @@
+#####Como cambiar el idioma de la interfaz web de Zabbix
+
+#####Instalar paquetes de Idiomas
+
+dpkg-reconfigure locales
+
+ Locales to be generated:                                                          
+  │    [*] es_ES ISO-8859-1                                                                 
+  │    [*] es_ES.UTF-8 UTF-8 
+
+   Default locale for the system environment:
+   
+  │        C.UTF-8                 
+  │    [*] en_US.UTF-8    
+  │        es_ES       
+  │        es_ES.UTF-8     
+  │        eu_ES
+  
+ 
+#####Configuramos el archivo de zabbix
+ 
+vim /usr/share/zabbix/include/locales.inc.php
+
+#'es_ES' => ['name' => _('Spanish (es_ES)'),     'display' => false],
+'es_ES' => ['name' => _('Spanish (es_ES)'),     'display' => true],  <------
+ 
+
+#####Reiniciar servidor Apache
+ 
+sudo systemctl restart apache2
+
+#####Ingresar a Zabbix
+
+User Settings 
+   ====> Profile
+       ====> Idioma
+ 
+
+https://tutorialesit.com/cambiar-idioma-interfaz-web-zabbix/

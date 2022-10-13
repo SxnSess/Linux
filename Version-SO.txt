@@ -1,0 +1,11 @@
+#####Version del SO
+
+cat /etc/*release
+cat /etc/os-release
+
+lsb_release -d
+
+lsb_release -a
+
+apt -y install inxi
+inxi -Sz

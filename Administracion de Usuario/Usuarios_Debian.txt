@@ -1,0 +1,31 @@
+#####Creacion de usuarios
+
+sudo adduser username 
+sudo useradd -m -s /bin/bash carlos      ##Crear usuarios con directorio
+
+
+#####Asignar Password
+
+sudo passwd username
+
+
+#####Darle privilegios sudo 
+
+sudo usermod -aG sudo username
+
+
+#####Para ingresar a un usuario
+
+su - username
+
+
+#####Eliminar usuarios 
+
+sudo deluser bullseye
+
+
+#####Eliminar usuarios y directorio home
+
+sudo deluser bullseye --remove-home 
+
+ 

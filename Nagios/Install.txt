@@ -1,0 +1,98 @@
+#####Install Nagios
+
+
+#####Actualizamos Repositorios
+sudo apt update
+
+
+#####Instalamos Dependencias
+sudo apt install wget unzip curl openssl build-essential libgd-dev libssl-dev libapache2-mod-php php-gd php apache2 -y
+
+
+#####Descargamos Nagios 4.4.7
+
+wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.6.tar.gz
+
+
+#####Descomprimimos
+
+sudo tar -zxvf nagios-4.4.7.tar.gz
+
+
+#####Ingresamos al Directorio
+
+cd nagios-4.4.6
+
+
+#####Ejecutamos el script de configuración de Nagios Core
+
+sudo ./configure
+
+
+#####Compilar el programa
+
+sudo make all
+
+
+#####Configurar el grupo y el usuario
+
+sudo make install-groups-users
+
+
+#####Añadir el usuario www-data directories al grupo nagios
+
+sudo usermod -a -G nagios www-data
+
+
+#####Install Nagios
+
+sudo make install
+
+
+#####Inicializar todos los scripts de configuración de la instalación
+
+sudo make install-init
+
+
+#####Instalar y configurar los permisos en el directorio de configs.
+
+sudo make install-commandmode
+
+
+#####Instalar archivos de configuración de ejemplo.
+
+sudo make install-config
+
+
+#####Instalar los archivos de apache
+
+sudo make install-webconf
+
+
+#####Activar el modo de reescritura de apache
+
+sudo a2enmod rewrite
+
+
+#####Habilitar la configuración de CGI
+
+sudo a2enmod cgi
+
+
+#####Reinicie el servicio de Apache
+
+sudo systemctl restart apache2
+
+
+#####Cree un usuario y establezca la contraseña cuando se le solicite
+
+sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users admin
+
+
+
+
+
+
+
+
+https://www.vultr.com/docs/install-nagios-on-ubuntu-20-04/

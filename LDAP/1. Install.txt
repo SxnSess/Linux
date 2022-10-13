@@ -1,0 +1,26 @@
+#####Before instalacion 
+
+sudo vim /etc/hosts
+192.168.50.162 ldap.antonio.com
+
+###Configure hostname (opcional)
+
+sudo hostnamectl set-hostname ldap.antonio.com --static
+
+#####Instalar LDAP
+
+sudo apt -y update && sudo apt -y upgrade
+
+sudo apt -y install slapd ldap-utils
+
+
+
+#####Verificar 
+
+sudo slapcat
+
+#####Eliminar Ldap
+
+sudo apt-get remove --purge slapd ldap-utils -y
+
+https://computingforgeeks.com/install-and-configure-openldap-server-ubuntu/

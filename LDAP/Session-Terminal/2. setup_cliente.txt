@@ -1,0 +1,43 @@
+#####Conectar LDAP con equipos (Cliente)
+####Configurar Dominio
+
+sudo vim /etc/hosts
+
+192.168.7.75 ldap.antonio.com
+
+
+#####Instalar ldap-cliente -Terminal
+
+sudo apt -y install libnss-ldap libpam-ldap ldap-utils
+
+#####session grafica
+
+sudo apt -y install nslcd
+
+#####
+
+vim /etc/nsswitch.conf
+
+passwd:         files ldap
+group:          files ldap
+shadow:         files ldap
+
+
+#####editar common-password
+vim /etc/pam.d/common-password
+
+Remove use_authtok en la linea 26
+
+
+#####editar common-session
+vim /etc/pam.d/common-session
+
+session optional pam_mkhomedir.so skel=/etc/skel umask=077
+
+#####Actualizar
+
+pam-auth-update
+
+https://computingforgeeks.com/how-to-configure-ubuntu-as-ldap-client/
+
+user carolina: Y1O039TJhrDI

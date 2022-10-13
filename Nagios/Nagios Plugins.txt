@@ -1,0 +1,34 @@
+#####Install Nagios Plugins
+
+
+#####Descargue el plugin Nagios Core
+
+cd ~/
+
+wget https://nagios-plugins.org/download/nagios-plugins-2.3.3.tar.gz
+
+
+#####Extraer el plugin descargado
+
+sudo tar -zxvf nagios-plugins-2.3.3.tar.gz
+
+
+#####Ingresar al Directorio
+
+cd nagios-plugins-2.3.3/
+
+
+#####Ejecutar el script de configuración del pluging
+
+sudo ./configure --with-nagios-user=nagios --with-nagios-group=nagios
+
+
+#####Compilar Nagios Core plugins
+
+sudo make
+
+
+#####Instalar el Plugins
+
+sudo make install
+

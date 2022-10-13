@@ -1,0 +1,63 @@
+*******Partcionar Discos*********
+
+sudo fdisk /dev/sdx
+
+n --  Nueva Particion
+p --  Particion Primaria
+1 --  Asignar numero de particiones
+Firt 2048  -- Por defecto
+last 
+t --  Cambia el tipo de Particion
+8e -- Linux LVM
+w --  Guardar 
+
+
+********Volumen Fisico*********
+pvs
+pvcreate /dev/sdb
+
+********Grupo Volumen**********
+vgs
+vgcreate vg02 /dev/sdb1
+
+********Asignarle tamaño al disco*********
+lvs
+lvcreate -n data -l +100%FREE vg02
+
+
+
+
+********Instalar xfsprogs**********
+sudo apt-get install xfsprogs
+
+sudo modprobe -v xfs
+
+
+Verify that xfs loaded either using the
+grep xfs /proc/filesystems
+lsmod | grep xfs
+modinfo xfs
+
+
+********Listar Particiones del Sistema**********
+sudo fdisk -l
+
+
+********FormatearDisco**********
+mkfs.xfs /dev/device
+mkdir -p data
+nano /etc/fstab
+moun /data
+
+
+
+
+
+
+
+
+SdCqCm2019*
+
+
+root 0808
+antonio 0809

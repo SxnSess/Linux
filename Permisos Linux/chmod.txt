@@ -1,0 +1,22 @@
+#####Permisos en Linux (chmod)
+
+
+Lectura  Escritura  Ejecucion |
+   4    +    2     +     1    |= 7
+------------------------------|    
+
+
+Read(r) Write(w) Execute(x) 
+
+Dueño  Grupo   Otros
+ RW  | - RW  |- RW   = 666
+ RWX | - RWX |- RWX  = 777
+ RW  | -  R  |-  R   = 6
+
+chmod 7|7|7 file
+
+Lectura(r) Escritura(w) Ejecucion(x)
+   4    +    2     +     1    |= 7
+------------------------------|
+
+sudo chgrp antonio roseliz.py

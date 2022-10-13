@@ -1,0 +1,10 @@
+***********Espacio de las particiones*********
+df -h
+
+
+********Espacio del directorio actual********
+du -sh /dir/dir
+
+
+********Espacio del contenido del directorio********
+du -sh /dir/dir/*
